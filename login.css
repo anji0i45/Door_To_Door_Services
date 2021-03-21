@@ -1,0 +1,184 @@
+/* Resetting the default margin and padding of the page */
+body {
+    margin: 0px;
+    padding: 0px;
+}
+/* Hover setting of the input Box i.e email and password input */
+input:hover{
+box-shadow:2px 2px 3px 3px  rgb(233, 155, 38);
+cursor: pointer;
+}
+
+/* main part of the body which is header  controlling the whole page */
+header{
+display: flex;
+justify-content: center;
+align-items: center;
+padding:2rem;
+
+}
+/* Setting of the backgroung image with before peusduo selector */
+header::before {
+    content: "";
+    background: url('Login_Images/login.jpg') no-repeat center center/cover;
+    z-index: -1;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+
+.container {
+/* main container of the page containing the main box  */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 90vh;
+   width: 60vw;
+   background-color: rgb(247, 247, 253);
+    box-shadow: 1rem 1rem 2rem black;
+    border-radius: 1rem;
+
+}
+
+#heading { 
+    /* giving heading to the page login to our website */
+    display: flex;
+    font-size: 3.5rem;
+    font-family: 'Chango', cursive;
+    color: rgb(233, 155, 38);
+    
+
+
+}
+
+.loginform {
+    /* login form contaning the form */
+    display: flex;
+    justify-content: center;
+flex-direction: column;
+    padding: 1em;
+
+}
+
+input {
+    
+    padding: 0.9rem;
+    width: 540px;
+    font-family: 'Architects Daughter', cursive;
+    border-radius: 6px;
+    border: 2px solid burlywood;
+    font-size: 1rem;
+}
+input:focus {
+    border: 3px solid rgb(235, 180, 107);
+   color: darkgoldenrod;
+   font-size: 1.1rem;
+  } 
+
+.label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Architects Daughter', cursive;
+    margin: 4px;
+    color:goldenrod;
+}
+
+.btn {
+    /* main  button of the website Login button  */
+    display: flex;
+   margin-left: 15px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    background-color: rgb(245, 217, 181);
+    border-radius: 8px;
+    box-shadow: 2px 2px 3px 3px rgb(102, 98, 98);
+    width: 575px;
+    font-size: 2rem;    
+    font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.btn:hover{
+    /* hovering of the button  */
+    width: 580px;
+    height: 65px;
+    transition:width 0.2s,height:0.2s;;
+    cursor:pointer;
+    box-shadow:2px 2px 3px 3px  rgb(247, 223, 188);
+    background-color: rgb(248, 224, 192);
+    
+} 
+.btncontainer{
+    /* container of the button  */
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    justify-content: center;
+    
+}
+.loginusing{
+
+    font-family: 'Permanent Marker', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: burlywood;
+    
+}
+.btn1:hover, .btn2:hover, .btn3:hover{
+
+    width: 4.5rem;
+    height: 4.5rem;
+    transition:width 0.2s,height: 0.2s;;
+    cursor:pointer;
+    
+    
+}
+
+.btn1{ 
+     margin-right: 2rem;
+    background: url('Login_Images/logingoogleicon.png') no-repeat center center/cover;
+height: 4rem;
+border: none;
+width: 4rem;    
+
+}
+.btn2{ 
+    margin-right: 2rem;
+    background: url('Login_Images/loginfacebookico.png') no-repeat center center/cover;
+height: 4rem;
+border: none;
+width: 4rem;    
+
+}.btn3{ 
+    margin-right: 2rem;          
+    background: url('Login_Images/loginlinkedinicon.webp') no-repeat center center/cover;
+height:4rem;
+border: none;
+width: 4rem;    
+
+}
+
+#forget {
+display: flex;
+font-size: 1.2rem;
+float: right;
+margin-right: 1rem;
+font-weight: bold;
+color:peru;
+}
+  .forget, a{
+    text-decoration: none;
+    
+}
+  .forget, a:hover{
+    text-decoration: none;
+    color:rgb(241, 206, 117)
+    
+}
