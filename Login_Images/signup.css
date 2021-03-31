@@ -1,40 +1,19 @@
-.container {
-    /* main container of the page containing the main box  */
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       height: 90vh;
-       width: 60vw;
-       background-image: url("/Login_Images/login_back1.jpg");
-       background-size: cover;
-       background-position: center;
-       background-repeat: no-repeat;
-       opacity: 0.5;
-    z-index: -1;
-        box-shadow: 1rem 1rem 2rem black;
-        border-radius: 1rem;
+body,html{
+    height: 100%;
+    }
 
-         animation-name:animate;
-        animation-direction:alternate-reverse;
-         animation-duration: 50s;
-         animation-fill-mode:both;
-         animation-iteration-count: infinite;
-         animation-play-state:unset;
-         animation-timing-function:ease-in-out;
-         
-         
-        }
-        
-        @keyframes animate{
-            0%{
-               
-            background-image:url("/Login_Images/login_back2.jpg");
-           
-        }
-        10%{
-            background-image:url("/Login_Images/login_back3.jpg");
-        }
-        20%{
-            background-image:url("/Login_Images/loginfacebookico.png");
-        }
+.container {
+    padding: 20px;
+    height: 100%;
+    background-size: 100% auto;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    display: flex;
+    box-shadow: 1rem 1rem 2rem black;
+    opacity: 0.5;
+    border-radius: 1rem;
+    flex-direction: column;
+    align-items: center;
     }

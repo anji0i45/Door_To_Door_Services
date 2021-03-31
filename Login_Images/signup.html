@@ -13,8 +13,20 @@
 </head>
 <body>
     <div class="container" id="conback">
-   <script>
-       ('<img src="/' + images[Math.floor(Math.random() * images.length)] + '" />').appendTo('conback');
-   </script>
+      
+        </div>
 </body>
+<script>
+    function randImage(){
+            var files=[
+                "login_back1.jpg",
+                "login_back2.jpg",
+                "login_back3.jpg",
+            ];
+            var randIndex=Math.floor(Math.random()*files.length);
+            document.getElementById("conback").style.backgroundImage="url('"+files[randIndex]+"')";
+            }
+    randImage();
+    setInterval(randImage,5000);
+    </script>
 </html>
