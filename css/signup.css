@@ -1,9 +1,15 @@
 body,html{
     margin: 0px;
     padding: 0px;
-    height: 100%;
+   
+}
+body::before{
+   opacity: 0.5;
     background:no-repeat;
+    background-position:center center cover;
     background-size: 100% auto;
+    
+
 }
 
 .container {
@@ -13,88 +19,196 @@ body,html{
     display: flex;
     flex-direction: row;
     padding: 10px;
-    opacity: 0.5;
+    justify-content: center;
+    align-items: center;
+   
 }
 
+
 .leftcontainer{
+    display: flex;
+    background-image: url("/images/signup/shopiconbac.jpg") ;
+    background-repeat: no-repeat;
+    
     flex-direction: column;
-    padding: 10px;
+    margin-top: 4rem;
+    height: 85vh;
+    width: 35vw;
+    object-fit:cover;
+    border-radius: 1rem 0rem 0rem 1rem;   
+    padding: 0rem 0rem 0rem 0.5rem;
+    align-items: center;
+   
+   
+}
+
+
+.leftcontainer h2{
+
+    font-family: 'Permanent Marker', cursive;
+   font-size: 5rem;
+   padding: 0px;
+   margin: 0px;
+   
+   color:rgb(3, 73, 3);
+   font-weight: lighter;
+}
+.leftcon{
+    
+    justify-content :center;
+    margin: 0rem;
+    padding: 2px;
+    justify-content: center;
+    margin-right: 2rem; 
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    font-weight:600;
+  
+    color:rgb(3, 73, 3);
+    font-family: 'Aclonica', sans-serif;
+}
+.leftcon1{
+    color:rgb(240, 69, 47);
+    font-family: 'Yatra One', cursive;
+    align-self: center;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    font-size: 1rem;
 }
 
 .rightcontainer{
     flex-direction: column;
-    padding: 10px;
-    line-height: 2rem;
+    padding: 0rem 0rem 0rem 0.5rem;
+    line-height: 2rem; 
+    background-color: rgb(192, 241, 241);
+    background-repeat: no-repeat;
+    flex-direction: column;
+    margin-top: 4rem;
+    height: 85vh;
+    width: 35vw;
+    object-fit: fill;
+    border-radius: 0rem 1rem 1rem 0rem;  
 } 
-
-.btn {
-    /* main  button of the website Login button  */
-    display: flex;
-    margin-left: 15px;
-    align-items: center;
-    justify-content: center;
-    padding: 0.4rem;
-    background-color: rgb(245, 217, 181);
-    border-radius: 8px;
-    border: none;
-    box-shadow: 2px 2px 3px 3px rgb(248, 207, 146);
-    width: auto;
-    font-size: 2rem;    
-    font-weight: bold;
+.signinbtn{
+    height: 3.5rem;
+    width: 20rem;
+    margin-top: 0.8rem;
+    padding:0.1rem;
+    background: none;
+    border-radius: 3rem;
+    border-color: whitesmoke;
+    border:5px solid whitesmoke;
+    font-size: 2.2rem;
+    color:whitesmoke;
+    font-family: 'Architects Daughter', cursive;
+    font-weight: bolder;
+}
+.signinbtn:hover{
+    height: 3.8rem;
+    color:rgb(80, 79, 79);
+    width: 20.5rem;
+    transition:width 0.2s,height: 0.2s;
+    background-color:rgb(245, 245, 245);
+    cursor:pointer;
+    font-size:2.4rem;  
+}
+hr{
+    size: 0.2rem;
+    width: 90%;
 }
 
-.btn:hover{
-/* hovering of the button  */
-transition:0.2s 0.2s;
-cursor:pointer;
-box-shadow:2px 2px 3px 3px  rgb(247, 223, 188);
-background-color: rgb(248, 224, 192);
-}
-.btncontainer{
-/* container of the button  */
-display: flex;
-flex-direction: row;
-margin: 1rem;
-justify-content: center;
 
-}
 .loginusing{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 2rem;
-    font-weight: bold;
-    font-size: 1rem;
+    margin:0px;
+    padding:0px;
+    font-size: 1.5rem;
+    font-weight:bold;
+    font-style: italic;
+    color:rgb(236, 13, 13);
+}
+
+
+
+#reload{
+background-image: url("/icon/recaptchaicon.png") ;
+background-repeat: no-repeat;
+height: 40px;
+width: 40px;
+border: none;
+border-radius: 0.5rem;
+cursor: pointer;
+}
+#showpass   {
+background-image: url("/icon/recaptchaicon.png") ;
+background-repeat: no-repeat;
+height: 40px;
+width: 40px;
+border: none;
+border-radius: 0.5rem;
+cursor: pointer;
+}
+
+#captchaimage{
+    display: inline-block;
+    position: relative;
+    border:2px solid black;
+    width: 200px;
+    height: 45px;
+    background-color:whitesmoke;
 
 }
-.btn1:hover, .btn2:hover, .btn3:hover{  
-    width: 4.5rem;
-    height: 4.5rem;
+.btn{
+    display: flex;
+    
+}
+
+.btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover{  
+    width: 5.5rem;
+    height: 5.5rem;
     transition: 0.2s  0.2s;;
     cursor:pointer;
-
+border:none;
 }
 
 .btn1{ 
- margin-right: 2rem;
+    
      background: url('../icon/logingoogleicon.png') no-repeat center center/cover;
-     height: 4rem;
+     margin-right: 2rem;
+     height: 5rem;
      border: none;
-     width: 4rem;         
+     width: 5rem;  
+     
      }
 
 .btn2{ 
     margin-right: 2rem;
     background: url('../icon/loginfacebookicon.png') no-repeat center center/cover;
-    height: 4rem;
+    height: 5rem;
     border: none;
-    width: 4rem;    
+    width: 5rem;    
          
      }
 .btn3{ 
     margin-right: 2rem;          
     background: url('../icon/loginlinkedinicon.png') no-repeat center center/cover;
-    height:4rem;
+    height:5rem;
     border: none;
-    width: 4rem;    
+    width: 5rem;    
+} 
+.btn4{ 
+    margin-right: 2rem;          
+    background: url('../icon/twittericon.png') no-repeat center center/cover;
+    height:5rem;
+    border: none;
+    width: 5rem;    
+} 
+
+
+#togglePassword , #togglePassword1{
+    
+        margin-left: -30px;
+        cursor: pointer;
+    
 }
