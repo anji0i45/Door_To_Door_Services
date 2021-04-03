@@ -164,7 +164,7 @@ color: burlywood;
 
 width: 4.5rem;
 height: 4.5rem;
-transition:width 0.2s,height: 0.2s;;
+transition:width 0.2s,height: 0.2s;
 cursor:pointer;
 
 }
