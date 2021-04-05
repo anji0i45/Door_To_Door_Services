@@ -20,7 +20,7 @@ body::before{
     flex-direction: row;
     padding: 10px;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
    
 }
 
@@ -33,18 +33,17 @@ body::before{
     flex-direction: column;
     margin-top: 4rem;
     height: 85vh;
-    width: 35vw;
+    width: auto;
+    height: auto;
+    background-size: auto 100%;
     object-fit:cover;
     border-radius: 1rem 0rem 0rem 1rem;   
     padding: 0rem 0rem 0rem 0.5rem;
     align-items: center;
-   
-   
 }
 
 
 .leftcontainer h2{
-
     font-family: 'Permanent Marker', cursive;
    font-size: 5rem;
    padding: 0px;
@@ -67,6 +66,7 @@ body::before{
     color:rgb(3, 73, 3);
     font-family: 'Aclonica', sans-serif;
 }
+
 .leftcon1{
     color:rgb(240, 69, 47);
     font-family: 'Yatra One', cursive;
@@ -86,11 +86,13 @@ body::before{
     background-repeat: no-repeat;
     flex-direction: column;
     margin-top: 4rem;
-    height: 85vh;
-    width: 35vw;
+    height: auto;
+    width: 100%;
     object-fit: fill;
+    background-size: auto 100%;
     border-radius: 0rem 1rem 1rem 0rem;  
 } 
+
 .signinbtn{
     height: 3.5rem;
     width: 20rem;
@@ -105,6 +107,7 @@ body::before{
     font-family: 'Architects Daughter', cursive;
     font-weight: bolder;
 }
+
 .signinbtn:hover{
     height: 3.8rem;
     color:rgb(80, 79, 79);
@@ -159,9 +162,20 @@ cursor: pointer;
     background-color:whitesmoke;
 
 }
+
+button {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: monospace;
+    font-weight: bold;
+    outline: none;
+    background-color: #19ff65;
+  }
+
 .btn{
-    display: flex;
-    
+    display: flex;    
 }
 
 .btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover{  
@@ -212,3 +226,39 @@ border:none;
         cursor: pointer;
     
 }
+
+
+
+
+
+
+/* The message box is shown when the user clicks on the password field */
+#message , #cmessage{
+    display:none;
+    line-height: 0%;
+    background: #e5ff00;
+    color: #000;
+    padding: 5px;
+    border-radius: 2mm;
+
+
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+  
+  /* .valid:before {
+    content: "symbol";
+  } */
+
+  /* Add a red text color and an "x" icon when the requirements are wrong */
+  .invalid {
+    color: red;
+  }
+  
+  /* .invalid:before {
+    content: "symbol";
+  }  */
+  
