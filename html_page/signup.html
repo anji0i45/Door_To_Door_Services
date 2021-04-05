@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="../css/country/flags.css" />
 
 </head>
-<body>
+<body onload="generate()">
     <div class="container" id="conback">
         <div class="leftcontainer">
             <p ><h2>SIGN UP</h2></p>
@@ -74,10 +74,7 @@
                       placeholder="E-mail"
                       title="Enter a valid email-id"
                       required/>
-                <input type="button" 
-                        value="Verify-Email" 
-                        id="verifyemail"
-                        />
+
                 </div>    
                 <div class="phone">
                   <label for="phoneno">PHONE *</label>
@@ -610,25 +607,33 @@
                     <i class="far fa-eye" id="togglecPassword"></i><br> 
                     
                     <div id="cmessage">
-                        <h6 id="cerror" class="invalid">confirm password same as <b>password</b></h6>
+                        <h6 id="cerror" class="invalid">confirm password must be same as <b>password</b></h6>
                     </div> 
+                    <div>
 
-                <div class="cap">
-                <label for="captcha">CAPTCHA IMAGE</label>
-                <span id="captchacontainer"><div id="captchaimage"></div></span>
-                <span id="reloadcpatcha"><input type="button"  alt="Image cannot be loaoded" id="reload" ></span> 
-                </div>
-                <div class="capvalue">
-                <label for="captcha">CAPTCHA VALUE*</label>
-                <input type="text" 
-                        id="captcha" 
-                        name="cacptchacode" 
-                        placeholder="Captcha Value" 
-                        title="Enter above captcha value" 
-                    required/>
-                </div>
-                <div class="buttonsignreset ">
-                  <button type="submit" value="SIGN UP" id="signup">Sign up</button>
+                      <label>CAPTCHA  VALUE *</label>
+                        <input type="text" readonly id="generated-captcha"/>
+                        <img src="../icon/recaptchaicon.png"
+                          alt="Generate new" 
+                          title="click here to regenerate captcha" 
+                          onclick="generate()" 
+                          id="gen"/>
+                    </div>
+                    <div>
+                      <label>ENTER CAPTCHA *</label>
+                        <input type="text" 
+                                  id="entered-captcha" 
+                                  name="captchacode"
+                                  placeholder="Enter the captcha..."
+                                  title="Enter captcha here" 
+                                required/>
+                    </div>
+                    <div id="captmessage">
+                      <h6 id="capterror" class="invalid">Entered Captcha must be same as <b>generated-captcha</b></h6>
+                  </div> 
+
+                  <div class="buttonsignreset ">
+                  <button type="submit" value="SIGN UP" id="signup" onclick="return finalcheck()">Sign up</button>
                   <button type="reset" value="RESET" id="reset">Reset</button>
                 </div>  
             </form>
@@ -791,13 +796,72 @@ passwdconfirm.onblur = function() {
 }
 
 passwdconfirm.onkeyup = function() {
-    if (myInput.value===passwdconfirm.value){
+    if (myInput.value==passwdconfirm.value){
         cerror.classList.remove("invalid");
         cerror.classList.add("valid");
     } else {
         cerror.classList.remove("valid");
         cerror.classList.add("invalid");
   }
+}
+
+
+
+//captcha
+let captcha;
+let alphabets = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
+console.log(alphabets.length);
+
+ generate = () => {
+let first = alphabets[Math.floor(Math.random() * alphabets.length)];
+let second = Math.floor(Math.random() * 10);
+let third = Math.floor(Math.random() * 10);
+let fourth = alphabets[Math.floor(Math.random() * alphabets.length)];
+let fifth = alphabets[Math.floor(Math.random() * alphabets.length)];
+let sixth = Math.floor(Math.random() * 10);
+captcha = first.toString()+second.toString()+third.toString()+fourth.toString()+fifth.toString()+sixth.toString();
+console.log(captcha);
+document.getElementById('generated-captcha').value = captcha;
+document.getElementById("entered-captcha").value = '';
+}
+
+//check captcha
+var gencaptcha=document.getElementById("generated-captcha");
+var enteredcaptcha=document.getElementById("entered-captcha");
+// When the user clicks on the password field, show the message box
+enteredcaptcha.onfocus = function() {
+  document.getElementById("captmessage").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+enteredcaptcha.onblur = function() {
+  document.getElementById("captmessage").style.display = "none";
+}
+
+enteredcaptcha.onkeyup = function() {
+    if (enteredcaptcha.value==gencaptcha.value){
+        capterror.classList.remove("invalid");
+        capterror.classList.add("valid");
+    } else {
+        capterror.classList.remove("valid");
+        capterror.classList.add("invalid");
+
+  }
+}
+
+
+
+
+//finalcheck
+function finalcheck(){
+    if (!((myInput.value==passwdconfirm.value) && (enteredcaptcha.value==gencaptcha.value))){
+      alert("Invalid input");  
+      generate();  
+      return false;
+    }else{
+      prompt("yeeeee");
+      return true;
+    }
 }
 
 </script>
