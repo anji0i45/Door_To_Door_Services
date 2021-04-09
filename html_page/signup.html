@@ -20,7 +20,7 @@
 
 </head>
 <body onload="generate()">
-    <div class="container" id="conback">
+    <div class="container">
         <div class="leftcontainer">
             <p ><h2>SIGN UP</h2></p>
             <p class="leftcon"> Please enter your details to be part our great community.</p>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="rightcontainer">
-            <form action="#" method="POST">
+            <form action="#" method="POST" onsubmit="return finalcheck()" id="signupform">
                 <div class="name">
                     <strong>Enter Details Here</strong><br/>
                     <label for="fn">FIRST NAME *</label>
@@ -633,52 +633,69 @@
                   </div> 
 
                   <div class="buttonsignreset ">
-                  <button type="submit" value="SIGN UP" id="signup" onclick="return finalcheck()">Sign up</button>
-                  <button type="reset" value="RESET" id="reset">Reset</button>
-                </div>  
+                  <button type="submit" value="SIGN UP" id="signup">Sign up</button>
+                  <input type="button" value="Reset" id="resetbtn" onclick="resetfunction()"/>
+
+
+                </div>   
             </form>
         </div>
     </div>
 </body>
 <script>
-    function randImage(){
-        var files = [            
-            "../images/signup/userlogbg000.jpg",
-            "../images/signup/userlogbg001.jpg",
-            "../images/signup/userlogbg002.jpg",
-            "../images/signup/userlogbg003.jpg",
-            "../images/signup/userlogbg004.jpg",
-            "../images/signup/userlogbg005.jpg",
-            "../images/signup/userlogbg006.jpg",
-            "../images/signup/userlogbg007.jpg",
-            "../images/signup/userlogbg008.jpg",
-            "../images/signup/userlogbg009.jpg",
-            "../images/signup/userlogbg010.jpg",
-            "../images/signup/userlogbg011.jpg",
-            "../images/signup/userlogbg012.jpg",
-            "../images/signup/userlogbg013.jpg",
-            "../images/signup/userlogbg014.jpg",
-            "../images/signup/userlogbg015.jpg",
-            "../images/signup/userlogbg016.jpg",
-            "../images/signup/userlogbg017.jpg",
-            "../images/signup/userlogbg018.jpg",
-            "../images/signup/userlogbg019.jpg",
-            "../images/signup/userlogbg020.jpg",
-            "../images/signup/userlogbg021.jpg",
-            "../images/signup/userlogbg022.jpg",
-            "../images/signup/userlogbg023.jpg",
-            "../images/signup/userlogbg024.jpg",
-            "../images/signup/userlogbg025.jpg",
-            "../images/signup/userlogbg026.jpg",
-            "../images/signup/userlogbg027.jpg",
-            "../images/signup/userlogbg028.jpg",
-            "../images/signup/userlogbg029.jpg",
-            ];
-            var randIndex = Math.floor(Math.random() * files.length);
-            document.getElementById("conback").style.backgroundImage = "url('" + files[randIndex] + "')";
-        }
-    randImage();
-    setInterval(randImage, 5000);
+
+
+  //bg images generator
+    // function randImage(){
+    //     var files = [            
+    //         "../images/signup/userlogbg000.jpg",
+    //         "../images/signup/userlogbg001.jpg",
+    //         "../images/signup/userlogbg002.jpg",
+    //         "../images/signup/userlogbg003.jpg",
+    //         "../images/signup/userlogbg004.jpg",
+    //         "../images/signup/userlogbg005.jpg",
+    //         "../images/signup/userlogbg006.jpg",
+    //         "../images/signup/userlogbg007.jpg",
+    //         "../images/signup/userlogbg008.jpg",
+    //         "../images/signup/userlogbg009.jpg",
+    //         "../images/signup/userlogbg010.jpg",
+    //         "../images/signup/userlogbg011.jpg",
+    //         "../images/signup/userlogbg012.jpg",
+    //         "../images/signup/userlogbg013.jpg",
+    //         "../images/signup/userlogbg014.jpg",
+    //         "../images/signup/userlogbg015.jpg",
+    //         "../images/signup/userlogbg016.jpg",
+    //         "../images/signup/userlogbg017.jpg",
+    //         "../images/signup/userlogbg018.jpg",
+    //         "../images/signup/userlogbg019.jpg",
+    //         "../images/signup/userlogbg020.jpg",
+    //         "../images/signup/userlogbg021.jpg",
+    //         "../images/signup/userlogbg022.jpg",
+    //         "../images/signup/userlogbg023.jpg",
+    //         "../images/signup/userlogbg024.jpg",
+    //         "../images/signup/userlogbg025.jpg",
+    //         "../images/signup/userlogbg026.jpg",
+    //         "../images/signup/userlogbg027.jpg",
+    //         "../images/signup/userlogbg028.jpg",
+    //         "../images/signup/userlogbg029.jpg",
+    //         ];
+    //         var randIndex = Math.floor(Math.random() * files.length);
+    //         document.getElementById("conback").style.backgroundImage = "url('" + files[randIndex] + "')";
+    //     }
+    // randImage();
+    // setInterval(randImage, 5000);
+
+//random bg color generator
+    function setRandomColor() {
+			var letters = '0123456789ABCDEF';
+			var color = '#';
+			for (var i = 0; i < 6; i++) {
+				color += letters[Math.floor(Math.random() * 16)];
+		  		}
+			document.body.style.backgroundColor=color;
+			}
+		setRandomColor();
+		setInterval(setRandomColor,5000);
 
 //country
 $(document).ready(function() {
@@ -820,7 +837,6 @@ let fourth = alphabets[Math.floor(Math.random() * alphabets.length)];
 let fifth = alphabets[Math.floor(Math.random() * alphabets.length)];
 let sixth = Math.floor(Math.random() * 10);
 captcha = first.toString()+second.toString()+third.toString()+fourth.toString()+fifth.toString()+sixth.toString();
-console.log(captcha);
 document.getElementById('generated-captcha').value = captcha;
 document.getElementById("entered-captcha").value = '';
 }
@@ -850,8 +866,6 @@ enteredcaptcha.onkeyup = function() {
 }
 
 
-
-
 //finalcheck
 function finalcheck(){
     if (!((myInput.value==passwdconfirm.value) && (enteredcaptcha.value==gencaptcha.value))){
@@ -859,9 +873,17 @@ function finalcheck(){
       generate();  
       return false;
     }else{
-      prompt("yeeeee");
+      prompt(`Enter the 4 digit OTP sent to your mail-id ${document.getElementById("emailid").value}`);
+//otp function
+
       return true;
     }
+}
+
+
+function resetfunction(){
+  document.getElementById("signupform").reset();
+  generate();
 }
 
 </script>
